@@ -17,7 +17,7 @@ CREATE TABLE Recipes (
   instructions TEXT,
   image_url VARCHAR(255),
   creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  last_updated_date TIMESTAMP,
+  last_updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
