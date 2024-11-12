@@ -9,7 +9,7 @@ $host = "localhost";
 $username = "root"; // Default XAMPP username
 $password = ''; // Default XAMPP password (leave empty)
 // $database = "community_recipe_sharing";
-$database = "test";
+$database = "community_recipe_sharing";
 
 // This point those you changed to port 3307 might encounter error.
 // Nice vidoe to fix it: https://www.youtube.com/watch?v=YkLfRVGRLjE
