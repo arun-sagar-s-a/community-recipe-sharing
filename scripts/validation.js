@@ -110,7 +110,7 @@ function validatePassword(){
         return false; // Prevent form submission
     }
     else if (!passwordPattern.test(password)) {
-        displayError("pass", "x Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.");
+        displayError("pass", "x Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character [no '/'].");
         return false;
     }
     else {

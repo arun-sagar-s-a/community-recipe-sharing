@@ -62,7 +62,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt_insert->bind_param("sss", $login, $email, $passwordHash);
 
         if ($stmt_insert->execute()) {
+            session_start();
             echo "<p style='color: green;'>Registration successful!</p>";
+            header('Location: ../pages/login.html');
+            exit;
         } else {
             echo "<p style='color: red;'>Registration failed. Please try again.</p>";
         }
