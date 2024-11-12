@@ -1,0 +1,142 @@
+/* styles.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.error-message {
+    color: red;
+    font-size: 0.75rem;
+    margin: 0.5rem;
+}
+
+.error {
+    border: 2px solid red;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 450px;
+    width: 100%;
+    padding: 1.5rem;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    display: grid;
+    gap: 0.3rem;
+}
+
+label {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #6a5acd;
+    box-shadow: 0 0 5px rgba(106, 90, 205, 0.2);
+}
+
+button {
+    padding: 12px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #6a5acd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #5a4dbd;
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 10px;
+    }
+
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}
+
+
+.textfield {
+    margin-bottom: 15px;
+  }
+  
+  .textfield label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .textfield input[type="text"],
+  .textfield input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .textfield .error-message {
+    color: red;
+    font-size: 12px;
+  }
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Adjust the gap as needed */
+}
