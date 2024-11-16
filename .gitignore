@@ -2,5 +2,4 @@
 images/
 pages/recipe_submit.html
 scripts/recipevalidation.js
-server/get_recipes.php
 server/submit_recipe.php
