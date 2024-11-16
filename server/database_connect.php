@@ -1,8 +1,3 @@
-<!-- This script is used for connection php to the community_receipe_sharing database -->
-<!-- Name: Arun Sagar Sundahally Ashok -->
-<!-- ID: 041139362 -->
-
-
 <?php
 // Database configuration
 $host = "localhost";
@@ -20,7 +15,5 @@ $conn = new mysqli($host, $username, $password, $database,3307);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} else {
-    echo "Hello Arun connection, successful";
 }
 ?>
