@@ -108,19 +108,20 @@ if ($category_filter) {
         <section id="recipes-container">
             <?php if ($result->num_rows > 0): ?>
                 <?php while ($recipe = $result->fetch_assoc()): ?>
-                    <a href="single_recipe.php?id=<?php echo $recipe['recipe_id']; ?>" class="recipe-card">
-                        <div class="recipe">
+
+                    <div class="recipe">
+                        <a href="single_recipe.php?id=<?php echo $recipe['recipe_id']; ?>" class="recipe-card">
                             <img src="<?php echo htmlspecialchars($recipe['image_url']); ?>" alt="<?php echo htmlspecialchars($recipe['title']); ?>">
                             <h3><?php echo htmlspecialchars($recipe['title']); ?></h3>
-
+                        </a>
+                        <?php if ($recipe['user_id'] == $user_id): ?>
+                            <!-- Only display actions if the user is the owner -->
                             <div class="actions">
-                                <?php if ($recipe['user_id'] == $user_id): ?>
-                                    <a href="edit_recipe.php?id=<?php echo $recipe['recipe_id']; ?>">Edit</a>
-                                    <a href="../server/delete_recipe.php?id=<?php echo $recipe['recipe_id']; ?>">Delete</a>
-                                <?php endif; ?>
+                                <a href="edit_recipe.php?id=<?php echo $recipe['recipe_id']; ?>">Edit</a>
+                                <a href="../server/delete_recipe.php?id=<?php echo $recipe['recipe_id']; ?>">Delete</a>
                             </div>
-                        </div>
-                    </a>
+                        <?php endif; ?>
+                    </div>
                 <?php endwhile; ?>
             <?php else: ?>
                 <p>No recipes found!</p>
