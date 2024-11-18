@@ -4,8 +4,8 @@ include 'database_connect.php';
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  $username = trim($_POST['username']);
-  $password = trim($_POST['password']);
+  $username = trim($_POST['login']);
+  $password = trim($_POST['pass']);
 
   // Initialize errors array
   $errors = [];
@@ -33,39 +33,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         session_start();
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['username'] = $user['username'];
-        header('Location: index.php');
+        header('Location: ../pages/dashboard.php');
         exit;
       } else {
-        $errors[] = "Invalid password.";
+        $errors[] = "Wrong password.";
       }
     } else {
       $errors[] = "Invalid username.";
     }
   }
 
-  // Assign errors to variables
-  $usernameError = '';
-  $passwordError = '';
-  $generalError = '';
-
-  foreach ($errors as $error) {
-    if (strpos($error, 'username') !== false) {
-      $usernameError = $error;
-    } elseif (strpos($error, 'password') !== false) {
-      $passwordError = $error;
-    } else {
-      $generalError = $error;
-    }
-  }
+  // Store errors in session variables
+  session_start();
+  $_SESSION['login_error'] = implode("<br>", $errors);
+  
+  // Redirect to login page
+  header('Location: ../pages/login.php');
+  exit;
 }
-
-// Store errors in session variables
-session_start();
-$_SESSION['usernameError'] = $usernameError;
-$_SESSION['passwordError'] = $passwordError;
-$_SESSION['generalError'] = $generalError;
-
-// Redirect to login.html
-header('Location: ../pages/login.html');
-exit;
 ?>

@@ -3,14 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration Form</title>
-    <link rel="stylesheet" href="../styles/registration.css" />
+    <title>Registration Form - Community Recipe Sharing</title>
+    <link rel="stylesheet" href="../styles/common.css" />
     <script src="../scripts/validation.js" defer></script>
   </head>
   <body>
+    <header>
+      <h1>Community Recipe Sharing</h1>
+      <nav>
+        <a href="dashboard.php">Home</a>
+        <a href="./login.php">Login</a>
+      </nav>
+    </header>
+
     <main class="container">
       <section class="form-container">
-        <h1>Registration Form</h1>
+        <h2>Registration Form</h2>
+
+        <?php
+        // Start session to access error messages
+        session_start();
+        if (isset($_SESSION['errors'])) {
+          echo '<div class="error-messages">';
+          foreach ($_SESSION['errors'] as $error) {
+            echo '<p class="error-message">' . htmlspecialchars($error) . '</p>';
+          }
+          echo '</div>';
+          // Clear errors after displaying them
+          unset($_SESSION['errors']);
+        }
+        ?>
+
         <form
           id="registration-form"
           method="post"
@@ -65,13 +88,16 @@
             <p class="error-message" id="pass2Error"></p>
           </div>
 
-          <!-- <button type="submit">Register</button> -->
           <div class="button-container">
             <button type="submit">Sign-Up</button>
             <button type="reset" onclick="clearErrors()">Reset</button>
-        </div>
+          </div>
         </form>
       </section>
     </main>
+
+    <footer>
+      <p>© Community Recipe Sharing</p>
+    </footer>
   </body>
 </html>

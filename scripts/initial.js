@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const recipeDiv = document.createElement("div");
         recipeDiv.className = "recipe";
         recipeDiv.innerHTML = `
-          <img src="../${recipe.image_url}" alt="${recipe.title}" width="100%">
+          <img src="${recipe.image_url}" alt="${recipe.title}" width="100%">
           <h3>${recipe.title}</h3>
         `;
         container.appendChild(recipeDiv);
