@@ -22,19 +22,21 @@ body {
 header {
   background-color: var(--primary-color);
   color: white;
-  padding: 1.5em 1em;
+  padding: 1.5em;
   text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 1.8em;
 }
+
 
 nav {
   display: flex;
   justify-content: center;
-  gap: 1em;
+  /* gap: 1em; */
   margin-top: 1em;
 }
 
@@ -101,11 +103,18 @@ h2 {
 
 footer {
   background-color: var(--light-gray);
-  color: var(--text-color);
+  color: #000;
   text-align: center;
-  padding: 1.2em;
-  margin-top: auto;
-  font-size: 0.9rem;
+  /* padding: 1rem; */
+  margin-top: 2rem;
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  font-size: 0.85rem;
+}
+footer span{
+  color: red;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {

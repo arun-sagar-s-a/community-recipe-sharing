@@ -68,8 +68,9 @@ include '../server/database_connect.php'; // Ensure the database connection is i
   </main>
 
   <footer>
-    <p>© Community Recipe Sharing</p>
-  </footer>
+      <p>© Community Recipe Sharing. By Arun, with <span>♡</span></p>
+     
+    </footer>
 
 </body>
 

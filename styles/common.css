@@ -1,12 +1,23 @@
 :root {
-  --primary-color: #3366cc; /* Softer blue */
-  --secondary-color: #ff8c00; /* Vibrant orange */
-  --background-color: #f4f6f8; /* Gentle off-white */
-  --text-color: #2c3e50; /* Rich dark gray */
-  --accent-color: #e74c3c; /* Subtle red for accents */
-  --light-gray: #dfe6e9; /* Light gray for backgrounds */
-  --card-shadow: rgba(0, 0, 0, 0.15); /* Softer card shadow */
+  --primary-color: #3366cc;
+  /* Softer blue */
+  --secondary-color: #ff8c00;
+  /* Vibrant orange */
+  --background-color: #f4f6f8;
+  /* Gentle off-white */
+  --text-color: #2c3e50;
+  /* Rich dark gray */
+  --accent-color: #e74c3c;
+  /* Subtle red for accents */
+  --light-gray: #dfe6e9;
+  /* Light gray for backgrounds */
+  --card-shadow: rgba(0, 0, 0, 0.15);
+  /* Softer card shadow */
   --hover-bg: #357abd;
+}
+
+html {
+  display: grid;
 }
 
 body {
@@ -33,24 +44,24 @@ header h1 {
   font-size: 1.8em;
 }
 
+
 nav {
   display: flex;
   justify-content: center;
-  gap: 1.5em;
+  /* gap: 1em; */
   margin-top: 1em;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  padding: 0.7em 1.5em;
-  border-radius: 20px;
+  padding: 0.6em 1.2em;
+  border-radius: 25px;
   transition: background-color 0.3s, transform 0.2s;
-  font-size: 1em;
 }
 
 nav a:hover {
-  background-color: var(--hover-bg);
+  background-color: rgba(255, 255, 255, 0.3);
   transform: scale(1.05);
 }
 
@@ -144,11 +155,18 @@ button[type="reset"] {
 
 footer {
   background-color: var(--light-gray);
-  color: var(--text-color);
+  color: #000;
   text-align: center;
-  padding: 1em;
-  margin-top: auto;
-  font-size: 0.9em;
+  /* padding: 1rem; */
+  margin-top: 2rem;
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  font-size: 0.85rem;
+}
+footer span{
+  color: red;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {

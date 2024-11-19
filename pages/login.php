@@ -67,7 +67,8 @@
     </main>
 
     <footer>
-      <p>© Community Recipe Sharing</p>
+      <p>© Community Recipe Sharing. By Arun, with <span>♡</span></p>
+     
     </footer>
   </body>
 </html>

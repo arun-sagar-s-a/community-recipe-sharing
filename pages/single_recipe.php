@@ -111,7 +111,8 @@ $categories_result = $stmt->get_result();
     </main>
 
     <footer>
-        <p>© Community Recipe Sharing</p>
+      <p>© Community Recipe Sharing. By Arun, with <span>♡</span></p>
+     
     </footer>
 </body>
 

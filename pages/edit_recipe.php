@@ -28,7 +28,7 @@ $recipe = $stmt->get_result()->fetch_assoc();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Recipe</title>
-    <link rel="stylesheet" href="../styles/common.css"> <!-- Ensure styles are consistent -->
+    <link rel="stylesheet" href="../styles/edit_recipe.css"> <!-- Ensure styles are consistent -->
 </head>
 <body>
     <!-- Header with consistent navigation -->
@@ -88,7 +88,8 @@ $recipe = $stmt->get_result()->fetch_assoc();
 
     <!-- Footer with consistent footer across pages -->
     <footer>
-        <p>© Community Recipe Sharing</p>
+      <p>© Community Recipe Sharing. By Arun, with <span>♡</span></p>
+     
     </footer>
 </body>
 </html>
