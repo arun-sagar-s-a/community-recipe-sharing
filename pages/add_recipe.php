@@ -21,12 +21,14 @@ $category_result = $conn->query($category_sql);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Recipe - Community Recipe Sharing</title>
     <link rel="stylesheet" href="../styles/add_recipe.css">
 </head>
+
 <body>
     <header>
         <h1>Community Recipe Sharing</h1>
@@ -38,12 +40,13 @@ $category_result = $conn->query($category_sql);
     </header>
 
     <main>
-        <div >
-            <h2>Add a New Recipe</h2>
-            <p>Welcome, <?php echo htmlspecialchars($username); ?>!</p>
-        </div>
-        
+
+
         <section class="form-container">
+            <div class="heading">
+                <h2>Add a New Recipe</h2>
+                <p>Welcome, <?php echo htmlspecialchars($username); ?>!</p>
+            </div>
             <form id="add-recipe-form" action="../server/add_recipe.php" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="title">Recipe Title:</label>
@@ -70,8 +73,9 @@ $category_result = $conn->query($category_sql);
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="button-container">
                     <button type="submit">Add Recipe</button>
+                    <button type="reset">Reset</button>
                 </div>
             </form>
         </section>
@@ -81,5 +85,6 @@ $category_result = $conn->query($category_sql);
         <p>© Community Recipe Sharing</p>
     </footer>
 </body>
+
 </html>
 <?php $conn->close(); ?>
