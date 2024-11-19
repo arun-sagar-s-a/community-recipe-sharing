@@ -1,103 +1,76 @@
+<?php
+// Start the session
+session_start();
+include '../server/database_connect.php'; // Ensure the database connection is included
+?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration Form - Community Recipe Sharing</title>
-    <link rel="stylesheet" href="../styles/common.css" />
-    <script src="../scripts/validation.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <h1>Community Recipe Sharing</h1>
-      <nav>
-        <a href="dashboard.php">Home</a>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Recipe Sharing</title>
+  <link rel="stylesheet" href="../styles/dashboard.css">
+  <script src="../scripts/initial.js" defer></script>
+</head>
+
+<body>
+
+  <header>
+    <h1 style="color:aliceblue">Welcome to Community Recipe Sharing</h1>
+    <nav>
+      <?php if (isset($_SESSION['user_id'])): ?>
+        <a href="./display_recipes.php">View Recipes</a>
+        <a href="../server/logout.php">Logout</a>
+      <?php else: ?>
+        <a href="./register.php">Register</a>
         <a href="./login.php">Login</a>
-      </nav>
-    </header>
+      <?php endif; ?>
+    </nav>
+  </header>
 
-    <main class="container">
-      <section class="form-container">
-        <h2>Registration Form</h2>
-
+  <main>
+    <section id="featured-recipes">
+      <h2>
+        <?php if (isset($_SESSION['user_id'])): ?>
+          Welcome back, <?php echo htmlspecialchars($_SESSION['username']); ?>! Here are your featured recipes:
+        <?php else: ?>
+          Featured Recipes
+        <?php endif; ?>
+      </h2>
+      <div id="recipes-container">
         <?php
-        // Start session to access error messages
-        session_start();
-        if (isset($_SESSION['errors'])) {
-          echo '<div class="error-messages">';
-          foreach ($_SESSION['errors'] as $error) {
-            echo '<p class="error-message">' . htmlspecialchars($error) . '</p>';
+        if (isset($_SESSION['user_id'])) {
+          $user_id = $_SESSION['user_id'];
+          $query = "SELECT * FROM Recipes WHERE user_id = ?";
+          $stmt = $conn->prepare($query);
+          $stmt->bind_param("i", $user_id);
+          $stmt->execute();
+          $result = $stmt->get_result();
+          if ($result->num_rows > 0) {
+            echo "<div class='recipe'>";
+            echo "<h2>Your Recipes</h2>";
+
+            while ($recipe = $result->fetch_assoc()) {
+              echo "<h3>" . htmlspecialchars($recipe['title']) . "</h3>";
+            }
+
+            echo "</div>";
+          } else {
+            echo "<p>You haven't added any recipes yet!</p>";
           }
-          echo '</div>';
-          // Clear errors after displaying them
-          unset($_SESSION['errors']);
+        } else {
+          echo "<p>Discover amazing recipes from our community!</p>";
         }
         ?>
+      </div>
+    </section>
+  </main>
 
-        <form
-          id="registration-form"
-          method="post"
-          action="../server/register.php"
-          onsubmit="return validate()"
-        >
-          <div class="textfield form-group">
-            <label for="login">User name</label>
-            <input
-              type="text"
-              name="login"
-              id="login"
-              placeholder="please enter a unique username"
-              oninput="validateLogin()"
-            />
-            <p class="error-message" id="loginError"></p>
-          </div>
+  <footer>
+    <p>© Community Recipe Sharing</p>
+  </footer>
 
-          <div class="textfield form-group">
-            <label for="email">Email Address</label>
-            <input
-              type="text"
-              name="email"
-              id="email"
-              placeholder="please enter your email"
-              oninput="validateEmail()"
-            />
-            <p class="error-message" id="emailError"></p>
-          </div>
+</body>
 
-          <div class="textfield form-group">
-            <label for="pass">Password</label>
-            <input
-              type="password"
-              name="pass"
-              id="pass"
-              placeholder="Password"
-              oninput="enableConfirmPassword(); validatePassword()"
-            />
-            <p class="error-message" id="passError"></p>
-          </div>
-
-          <div class="textfield form-group">
-            <label for="pass2">Re-type Password</label>
-            <input
-              type="password"
-              id="pass2"
-              placeholder="Password"
-              disabled
-              oninput="validateRePassword()"
-            />
-            <p class="error-message" id="pass2Error"></p>
-          </div>
-
-          <div class="button-container">
-            <button type="submit">Sign-Up</button>
-            <button type="reset" onclick="clearErrors()">Reset</button>
-          </div>
-        </form>
-      </section>
-    </main>
-
-    <footer>
-      <p>© Community Recipe Sharing</p>
-    </footer>
-  </body>
 </html>

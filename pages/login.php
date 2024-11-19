@@ -11,8 +11,8 @@
     <header>
       <h1>Community Recipe Sharing</h1>
       <nav>
-        <a href="./dashboard.php">Home</a>
-        <a href="./index.php">Register</a>
+        <a href="./index.php">Home</a>
+        <a href="./register.php">Register</a>
       </nav>
     </header>
 

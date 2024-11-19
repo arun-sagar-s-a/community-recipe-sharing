@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION['errors'] = $errors;
 
         // Redirect back to the registration form
-        header('Location: ../pages/index.php');
+        header('Location: ../pages/register.php');
         exit;
     }
 

@@ -35,7 +35,7 @@ $recipe = $stmt->get_result()->fetch_assoc();
     <header>
         <h1>Community Recipe Sharing</h1>
         <nav>
-            <a href="./dashboard.php">Home</a>
+            <a href="./index.php">Home</a>
             <a href="./display_recipes.php">All Recipes</a>
             <a href="../server/logout.php">Logout</a>
         </nav>

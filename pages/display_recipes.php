@@ -69,7 +69,7 @@ $result = $stmt->get_result();
     <header>
         <h1>Community Recipe Sharing</h1>
         <nav>
-            <a href="./dashboard.php">Home</a>
+            <a href="./index.php">Home</a>
             <a href="./add_recipe.php">Add Recipe</a>
             <a href="../server/logout.php">Logout</a>
         </nav>

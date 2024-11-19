@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         session_start();
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['username'] = $user['username'];
-        header('Location: ../pages/dashboard.php');
+        header('Location: ../pages/index.php');
         exit;
       } else {
         $errors[] = "Wrong password.";
