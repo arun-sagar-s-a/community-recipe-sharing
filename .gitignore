@@ -1,5 +1,4 @@
 .vscode
-images/
 pages/recipe_submit.html
 scripts/recipevalidation.js
 server/submit_recipe.php
