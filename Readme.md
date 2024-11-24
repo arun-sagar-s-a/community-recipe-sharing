@@ -43,6 +43,7 @@ The **Community Recipe Sharing** platform is a web application that allows users
 <p align="center">
   <img src="./images/webpages/Singlerecipepage.png" alt="Community Recipe Sharing Landing page" title="Landing Page" style="width:50%;" border="2px black solid" />
 </p>
+
 - **Edit and Delete**: Users can edit or delete only their uploaded recipes. This is enforced through session management.
 
 <p align="center">
@@ -60,5 +61,6 @@ The **Community Recipe Sharing** platform is a web application that allows users
    - PHP (Server-side scripting).
    - HTML, CSS, JavaScript (Frontend).
    - MySQL (Database).
+## Live Demo
+[Community recip Sharing](https://arunsagarsa.freesite.online/assignment2/pages/)
 
----
