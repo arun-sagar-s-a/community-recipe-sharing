@@ -62,5 +62,5 @@ The **Community Recipe Sharing** platform is a web application that allows users
    - HTML, CSS, JavaScript (Frontend).
    - MySQL (Database).
 ## Live Demo
-[Community recip Sharing](https://arunsagarsa.freesite.online/assignment2/pages/)
+[Community recip Sharing](https://arunsagarsa99.infinityfreeapp.com/assignment2/pages/index.php)
 
